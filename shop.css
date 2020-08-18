@@ -1,0 +1,172 @@
+#today_goods {
+    position: absolute;
+    left: 88px;
+    top: 200px;
+    font-weight: 700;
+    font-size: xx-large;
+    color: white;
+}
+.price {
+    font-weight: bolder;
+    font-size: x-large;
+    color: Gainsboro;
+}
+#pad {
+    position: absolute;
+    width:300px;
+    height:300px;
+    left: 58px;
+    top: 300px;
+}
+#pad_text {
+    position: absolute;
+    left: 88px;
+    top: 600px;
+    color:white;
+}
+#price1 {
+    position: absolute;
+    left: 88px;
+    top: 630px;
+}
+#watch {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 558px;
+    top: 300px;
+}
+#watch_text {
+    position: absolute;
+    left: 608px;
+    top: 600px;
+    color:white;
+}
+#price2 {
+    position: absolute;
+    left: 608px;
+    top: 630px;
+}
+#laptop {
+    position: absolute;
+    left: 1058px;
+    top: 300px;
+}
+#laptop_text {
+    position: absolute;
+    left: 1108px;
+    top: 600px;
+    color: white;
+}
+#price3 {
+    position: absolute;
+    left: 1108px;
+    top: 630px;
+}
+.size
+{
+    width:30px;
+    height:20px;
+}
+#wifi {
+    position: absolute;
+    left: 58px;
+    top: 700px;
+    width: 300px;
+    height: 300px;
+}
+
+#wifi_text {
+    position: absolute;
+    left: 88px;
+    top: 1000px;
+    color: white;
+}
+
+#price4 {
+    position: absolute;
+    left: 88px;
+    top: 1020px;
+}
+#screen {
+    position: absolute;
+    left: 558px;
+    top: 700px;
+    width: 300px;
+    height: 300px;
+}
+
+#screen_text {
+    position: absolute;
+    left: 588px;
+    top: 1000px;
+    color: white;
+}
+
+#price5 {
+    position: absolute;
+    left: 588px;
+    top: 1020px;
+}
+#scale {
+    position: absolute;
+    left: 1058px;
+    top: 700px;
+    width: 250px;
+    height: 250px;
+}
+
+#scale_text {
+    position: absolute;
+    left: 1088px;
+    top: 1000px;
+    color: white;
+}
+
+#price6 {
+    position: absolute;
+    left: 1088px;
+    top: 1020px;
+}
+#button1 {
+    position: absolute;
+    left: 180px;
+    top: 635px;
+    background:rgba(0, 0, 0, 0.00);
+    outline:none;
+}
+#button2 {
+    position: absolute;
+    left: 690px;
+    top: 635px;
+    background: rgba(0, 0, 0, 0.00);
+    outline: none;
+}
+#button3 {
+    position: absolute;
+    left: 1200px;
+    top: 635px;
+    background: rgba(0, 0, 0, 0.00);
+    outline: none;
+}
+#button4 {
+    position: absolute;
+    left: 180px;
+    top: 1025px;
+    background: rgba(0, 0, 0, 0.00);
+    outline: none;
+}
+#button5 {
+    position: absolute;
+    left: 700px;
+    top: 1025px;
+    background: rgba(0, 0, 0, 0.00);
+    outline: none;
+}
+#button6 {
+    position: absolute;
+    left: 1200px;
+    top: 1025px;
+    background: rgba(0, 0, 0, 0.00);
+    outline: none;
+}

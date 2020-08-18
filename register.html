@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>注册</title>
+    <link href="register.css" type="text/css" rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="func.js"></script>
+    <script>
+        function InputCheck(RegForm) {
+            if (RegForm.username.value == "") {
+                alert("username couldnt be void!");
+                RegForm.username.focus();
+                return (false);
+            }
+
+            if (RegForm.password.value == "") {
+                alert("you must set your password");
+                RegForm.password.focus();
+                return (false);
+            }
+
+            if (RegForm.repass.value != RegForm.password.value) {
+                alert("two passwords are not the same");
+                RegForm.repass.focus();
+                return (false);
+            }
+
+            if (RegForm.username.value.length < 3 || RegForm.username.value.length > 15) {
+                alert("the length of username is illegal");
+                RegForm.username.focus();
+                return (false);
+            }
+            if (RegForm.password.value.length <6) {
+                alert("the length of passworde is illegal");
+                RegForm.password.focus();
+                return (false);
+            }
+        return true;
+
+        }
+        function getFormQueryString(frmID) //frmID是表单的ID号，请在表单form中先命名一个ID号
+        {
+            var frmID=document.getElementById(frmID);
+            var i,queryString = "",and = "";
+            var item;
+            var itemValue;
+            for( i=0;i<frmID.length;i++ )
+            {
+                item = frmID[i];
+                if ( item.name!='' )
+                {
+
+                    itemValue = item.value;
+                    itemValue = escape(itemValue);
+                    queryString += and + item.name + '=' + itemValue;
+                    and="&";
+                }
+            }
+            return queryString;
+        }
+        window.onload=function()
+        {
+            var oas = document.getElementById("submit");
+            var form=document.getElementById("regForm1");
+
+            oas.onclick=function()
+            {if(InputCheck(form))
+            {
+                $ajax({
+                    method:"POST",
+                    url:"http://localhost:8088/reg.php",
+                    data:getFormQueryString("regForm1")
+                });
+                setTimeout(function(){
+                    window.location.href="http://localhost:8088/register.html";},1000);
+
+            }}
+
+        };
+        function $ajax(
+            {
+                method="POST",
+                url="http://localhost:8088/reg.php",
+                data
+            }
+
+        )
+        {
+            var xhr=null;
+            xhr=new XMLHttpRequest();
+            xhr.open(method,url,true);
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            xhr.send(data);
+            xhr.onreadystatechange=function()
+            {
+                if(xhr.readyState==4)
+                {
+                    alert(xhr.responseText);
+                }
+            };
+        }
+    </script>
+</head>
+<body>
+    <div id="head"></div>
+    <img src="title.png" id="title" />
+    <a href="http://localhost:8088/cart.html"><img src="cart.png" id="cart" /></a>
+   <a id="log_in" 
+   <?php
+	session_start();
+    if(isset($_SESSION['username']))
+		echo 'href="http://localhost:8088/user.html"';
+	else
+		echo 'href="http://localhost:8088/log_in.html"';
+	?>
+	>
+	<?php
+    if(isset($_SESSION['username']))
+		echo $_SESSION['username'];
+	else
+	{
+	echo "登录";
+	}
+	?>
+	</a>
+    <div id="select_box"></div>
+    <div id="list"></div>
+    <div id="show_hot_product">热卖商品</div>
+    <div id="show_new_product">新进商品</div>
+    <div id="show_sale_product">打折商品</div>
+    <a id="back" href="http://localhost:8088/shop.html">返回</a>
+    <br /><br />
+    <fieldset id="regForm">
+        <form  id="regForm1" method="post" action="http://localhost:8088/reg.php" onSubmit="return InputCheck(this)">
+            <p>
+                <label for="username" class="label">用户名:</label>
+                <input id="username" name="username" type="text" class="input" />
+                <span>(必填，3-15字符长度，字母、数字及_)</span>
+            <p />
+            <p>
+                <label for="password" class="label">密 码:</label>
+                <input id="password" name="password" type="password" class="input" />
+                <span>(必填，不得少于6位)</span>
+            <p />
+            <p>
+                <label for="repass" class="label">重复密码:</label>
+                <input id="repass" name="repass" type="password" class="input" />
+            <p />
+            <p>
+
+            </p>
+        </form>
+    </fieldset>
+<button id="submit">  提交注册  </button>
+</body>
+</html>

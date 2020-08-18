@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>线上商城系统</title>
+    <link href="shop.css" type="text/css" rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <script  type="text/javascript" src="func.js"></script>
+</head>
+<body>
+    <div id="head"></div>
+    <img src="title.png" id="title" />
+    <a href="http://localhost:8088/cart.html"><img src="cart.png" id="cart" /></a>
+    <a id="log_in" 
+	<?php
+	session_start();
+    if(isset($_SESSION['username']))
+		echo 'href="http://localhost:8088/user.html"';
+	else
+		echo 'href="http://localhost:8088/log_in.html"';
+	?>
+	>
+	<?php
+    if(isset($_SESSION['username']))
+		echo $_SESSION['username'];
+	else
+	{
+	echo "登录";
+	}
+	?>
+	</a>
+    <div id="select_box"></div>
+    <div id="list"></div>
+    <div id="show_hot_product">热卖商品</div>
+    <div id="show_new_product">新进商品</div>
+    <div id="show_sale_product">打折商品</div>
+    <br /><br />
+    <div id="today_goods">今日推荐</div>
+    <br />
+    <img src="pad.png" id="pad" /><label id="pad_text">HUAWEI MatePad Pro 10.8英寸</label><label class="price" id="price1">￥3999</label><button id="button1"><img src="cart.png" class="size"></button>
+    <img src="watch.png" id="watch" /><label id="watch_text">HUAWEI WATCH GT 2 运动款</label><label class="price" id="price2">￥1438</label><button id="button2"><img src="cart.png" class="size"></button>
+    <img src="laptop.png" id="laptop" /><label id="laptop_text">HUAWEI MateBook 13 锐龙版</label><label class="price" id="price3">￥4699</label><button id="button3"><img src="cart.png" class="size"></button>
+    <img src="wifi.png" id="wifi" /><label id="wifi_text">凌霄双核Wi-Fi 6</label><label class="price" id="price4">￥224</label><button id="button4"><img src="cart.png" class="size"></button>
+    <img src="screen.png" id="screen" /><label id="screen_text">华为智慧屏 V65i 65英寸</label><label class="price" id="price5">￥4999</label><button id="button5"><img src="cart.png" class="size"></button>
+    <img src="scale.png" id="scale" /><label id="scale_text">荣耀智能体脂秤2 白色</label><label class="price" id="price6">￥99</label><button id="button6"><img src="cart.png" class="size"></button>
+
+
+</body>
+</html>

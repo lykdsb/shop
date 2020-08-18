@@ -1,0 +1,43 @@
+#your_cart {
+	position: absolute;
+	left: 88px;
+	top: 200px;
+	font-weight: 700;
+	font-size: xx-large;
+	color: white;
+}
+
+td {
+	border:1px solid Grey; 
+}
+th {
+	border: 1px solid Grey;
+}
+
+#checkBtn
+{
+	position: absolute;
+	left: 1300px;
+	top: 400px;
+	width: 80px;
+	height: 50px;
+	background-color: silver;
+	color: grey;
+	text-align: center;
+	font-size: large;
+	font-weight: 900;
+	line-height: 5px;
+
+}
+#chart {
+	position: absolute;
+	left: 350px;
+	top: 250px;
+	border: 10px double;
+	color: Grey;
+	background-color: lightgrey;
+	width:900px;
+	text-align:center;
+	font-size:xx-large;
+	border-collapse:separate;
+}

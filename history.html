@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>历史</title>
+    <link href="history.css" type="text/css" rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div id="head"></div>
+    <img src="title.png" id="title" />
+    <a href="http://localhost:8088/cart.html"><img src="cart.png" id="cart" /></a>
+    <a id="log_in" 
+	<?php
+	session_start();
+    if(isset($_SESSION['username']))
+		echo 'href="http://localhost:8088/user.html"';
+	else
+		echo 'href="http://localhost:8088/log_in.html"';
+	?>
+	>
+	<?php
+    if(isset($_SESSION['username']))
+		echo $_SESSION['username'];
+	else
+	{
+	echo "登录";
+	}
+	?>
+	</a>
+    <div id="select_box"></div>
+    <div id="list"></div>
+    <div id="show_hot_product">热卖商品</div>
+    <div id="show_new_product">新进商品</div>
+    <div id="show_sale_product">打折商品</div>
+    <a id="back" href="http://localhost:8088/shop.html">返回</a>
+
+    <br /><br />
+    <div id="your_cart">您的购物车</div>
+    <table id="chart">
+        <tr>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>商品数量</th>
+            <th>购买时间</th>
+        </tr>
+        <?php
+$conn = @mysqli_connect("localhost:3302","root","");
+if (!$conn){
+    die("连接数据库失败：");
+}
+mysqli_select_db($conn,"test1" );
+//字符转换，读库
+mysqli_query($conn,"set character set 'utf8'");
+//写库
+mysqli_query($conn,"set names 'utf8'");
+$query=mysqli_query($conn,"select * from history");
+while($res=$query->fetch_row())
+        {
+        echo "<tr>";
+        foreach($res as $val)
+        echo "<th>$val</th>";
+        echo "</tr>";
+        }
+        ?>
+    </table>
+</body>
+</html>

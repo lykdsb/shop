@@ -1,0 +1,97 @@
+#head {
+	width: 1500px;
+	height: 1200px;
+	background: DimGrey;
+}
+
+#cart {
+	position: absolute;
+	right: 0px;
+	top: 30px;
+}
+
+#log_in {
+	position: absolute;
+	right: 140px;
+	top: 40px;
+	width: 80px;
+	height: 50px;
+	background-color: silver;
+	text-align: center;
+	line-height: 50px;
+	color: Grey;
+	font-size: larger;
+	font-weight: 700;
+}
+
+#title {
+	position: absolute;
+	left: 0px;
+	top: 30px;
+}
+
+#list {
+	position: absolute;
+	left: 8px;
+	top: 100px;
+	width: 1500px;
+	height: 80px;
+	background-color: LightGrey;
+}
+
+#show_hot_product {
+	position: absolute;
+	left: 8px;
+	top: 98px;
+	width: 200px;
+	height: 80px;
+	border: 2px solid gray;
+	line-height: 80px;
+	text-align: center;
+	font-weight: 700;
+	font-size: x-large;
+	color: Grey;
+}
+
+#show_new_product {
+	position: absolute;
+	left: 208px;
+	top: 98px;
+	width: 200px;
+	height: 80px;
+	border: 2px solid gray;
+	line-height: 80px;
+	text-align: center;
+	font-weight: 700;
+	font-size: x-large;
+	color: Grey;
+}
+
+#show_sale_product {
+	position: absolute;
+	left: 408px;
+	top: 98px;
+	width: 200px;
+	height: 80px;
+	border: 2px solid gray;
+	line-height: 80px;
+	text-align: center;
+	font-weight: 700;
+	font-size: x-large;
+	color: Grey;
+}
+
+
+#back {
+	position: absolute;
+	left:608px;
+	top: 98px;
+	width: 200px;
+	height: 80px;
+	border: 2px solid gray;
+	line-height: 80px;
+	text-align: center;
+	font-weight: 700;
+	font-size: x-large;
+	color: Grey;
+}

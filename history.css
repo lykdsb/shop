@@ -1,0 +1,30 @@
+
+#your_cart {
+	position: absolute;
+	left: 88px;
+	top: 200px;
+	font-weight: 700;
+	font-size: xx-large;
+	color: white;
+}
+
+#chart {
+	position: absolute;
+	left: 350px;
+	top: 250px;
+	border: 10px double;
+	color: Grey;
+	background-color: lightgrey;
+	width: 900px;
+	text-align: center;
+	font-size: xx-large;
+	border-collapse: separate;
+}
+
+td {
+	border: 1px solid Grey;
+}
+
+th {
+	border: 1px solid Grey;
+}

@@ -1,0 +1,113 @@
+﻿<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>登录</title>
+    <link href="log_in.css" type="text/css" rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <script>
+        function getFormQueryString(frmID) //frmID是表单的ID号，请在表单form中先命名一个ID号
+        {
+            alert("hello world");
+            var frmID=document.getElementById(frmID);
+            var i,queryString = "",and = "";
+            var item;
+            var itemValue;
+            for( i=0;i<frmID.length;i++ )
+            {
+                item = frmID[i];
+                if ( item.name!='' )
+                {
+
+                    itemValue = item.value;
+                    itemValue = escape(itemValue);
+                    queryString += and + item.name + '=' + itemValue;
+                    and="&";
+                }
+            }
+            return queryString;
+        }
+        window.onload=function()
+        {
+            var oas = document.getElementById("button");
+
+            oas.onclick=function()
+            {
+                $ajax({
+                    method:"POST",
+                    url:"http://localhost:8088/login.php",
+                    data:getFormQueryString("LoginForm1")
+                });
+                setTimeout(function(){
+               window.location.href="http://localhost:8088/log_in.html";},1000);
+
+            }
+
+        };
+        function $ajax(
+            {
+                method="POST",
+                url="http://localhost:8088/login.php",
+                data
+            }
+
+        )
+        {
+            var xhr=null;
+            xhr=new XMLHttpRequest();
+            xhr.open(method,url,true);
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            xhr.send(data);
+            xhr.onreadystatechange=function()
+            {
+                if(xhr.readyState==4)
+                {
+                    alert(xhr.responseText);
+                }
+            };
+        }
+    </script>
+</head>
+<body>
+    <div id="head"></div>
+    <img src="title.png" id="title" />
+    <a href="http://localhost:8088/cart.html"><img src="cart.png" id="cart" /></a>
+    <a id="log_in" 
+	<?php
+	session_start();
+    if(isset($_SESSION['username']))
+		echo 'href="http://localhost:8088/user.html"';
+	else
+		echo 'href="http://localhost:8088/log_in.html"';
+	?>
+	>
+	<?php
+    if(isset($_SESSION['username']))
+		echo $_SESSION['username'];
+	else
+	{
+	echo "登录";
+	}
+	?>
+	</a>
+    <div id="select_box"></div>
+    <div id="list"></div>
+    <div id="show_hot_product">热卖商品</div>
+    <div id="show_new_product">新进商品</div>
+    <div id="show_sale_product">打折商品</div>
+    <a id="back" href="http://localhost:8088/shop.html">返回</a>
+    <br /><br />
+<fieldset id="LoginForm">
+<form id="LoginForm1">
+<p>
+<label for="username" class="label">用户名:</label>
+<input id="username" name="username" type="text" class="input" />
+<p/>
+<p>
+<label for="password" class="label">密 码:</label>
+<input id="password" name="password" type="password" class="input" />
+<p/><p></p>
+</form><button id="button">  登录  </button>
+</fieldset>
+ <a id="register" href="http://localhost:8088/register.html" >注册</a>
+</body>
+</html>

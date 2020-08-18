@@ -1,0 +1,46 @@
+#LoginForm
+{
+	position:absolute;
+	top:300px;
+	left:500px;
+	font-size:x-large;
+	background-color:silver;
+	color:dimgray;
+}
+.input {
+	font-size: x-large;
+	background-color:lightgrey;
+}
+#submit {
+	font-size: x-large;
+	background-color: lightgrey;
+	color:Grey;
+		width: 80px;
+	height: 50px;
+}
+#register {
+	position: absolute;
+	right: 600px;
+	top: 450px;
+	width: 80px;
+	height: 50px;
+	background-color: lightgrey;
+	text-align: center;
+	line-height: 50px;
+	color: Grey;
+	font-size: larger;
+	font-weight: 700;
+}
+#button
+{
+	width: 80px;
+	height: 50px;
+	background-color: lightgrey;
+	text-align: center;
+	line-height: 50px;
+	color: Grey;
+	font-size: larger;
+	font-weight: 500;
+
+}
+
